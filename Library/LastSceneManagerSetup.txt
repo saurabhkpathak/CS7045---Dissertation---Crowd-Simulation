@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Crowd Simulation.unity
+- path: Assets/Scenes/Crowd Simulation - with evacuation.unity
   isLoaded: 1
   isActive: 1

@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS7045-Dissertation---Crowd-Simulation", "Assembly-CSharp.csproj", "{3C5DA656-CC18-A500-6C56-964D360A49FE}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS7045-Dissertation---Crowd-Simulation.CSharp", "CS7045-Dissertation---Crowd-Simulation.CSharp.csproj", "{0418910E-335F-B4AF-56A1-9724908AA5BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3C5DA656-CC18-A500-6C56-964D360A49FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C5DA656-CC18-A500-6C56-964D360A49FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C5DA656-CC18-A500-6C56-964D360A49FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C5DA656-CC18-A500-6C56-964D360A49FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0418910E-335F-B4AF-56A1-9724908AA5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0418910E-335F-B4AF-56A1-9724908AA5BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0418910E-335F-B4AF-56A1-9724908AA5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0418910E-335F-B4AF-56A1-9724908AA5BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
