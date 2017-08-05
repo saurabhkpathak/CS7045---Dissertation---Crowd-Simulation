@@ -80,7 +80,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIController.cs" />
     <Compile Include="Assets\Scripts\Destinations.cs" />
+    <Compile Include="Assets\Scripts\Event.cs" />
+    <Compile Include="Assets\Scripts\EventManager.cs" />
+    <Compile Include="Assets\Scripts\EventTriggerTest.cs" />
     <Compile Include="Assets\Scripts\NavMeshAgentSample.cs" />
+    <Compile Include="Assets\Scripts\SelfDestruct.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
