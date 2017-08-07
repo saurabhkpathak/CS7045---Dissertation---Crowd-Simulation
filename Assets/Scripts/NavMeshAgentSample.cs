@@ -9,6 +9,7 @@ public class NavMeshAgentSample : MonoBehaviour {
 	System.Random r;
     float speedCache;
     ArrayList exits;
+	bool evacuationState = false;
     // Use this for initialization
     void Start () {
 		r = new System.Random ();
@@ -22,11 +23,11 @@ public class NavMeshAgentSample : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Vector3.Distance(agent.transform.position, target.transform.position) < 1.5) {
+		if(!evacuationState && Vector3.Distance(agent.transform.position, target.transform.position) < 1.5) {
 			int rDest = r.Next (1, 11);
 			target = GameObject.Find ("Destination " + rDest).GetComponent<Transform> ();
+			agent.SetDestination(target.position);
 		}
-        agent.SetDestination(target.position);
         if (Input.GetKeyDown("s")) {
             agent.speed = 0;
         }
@@ -35,7 +36,8 @@ public class NavMeshAgentSample : MonoBehaviour {
         }
         if (Input.GetKeyDown("e")) {
             agent.speed = 0;
-            //float nearestExit = Vector3.Distance(agent.transform.position);
+			target = getNearestExit ();
+			agent.speed = speedCache;
         }
     }
 
@@ -50,11 +52,17 @@ public class NavMeshAgentSample : MonoBehaviour {
         }
     }
 
-    float getNearestExit()
+	Transform getNearestExit()
     {
         float minDistance = Mathf.Infinity;
+		Transform nearestExit = new GameObject ().transform;
 		for (var i = 1; i <= exits.Count; i++) {
+			GameObject currExit = (GameObject)exits [i - 1];
+			float distance = Vector3.Distance (agent.transform.position, currExit.transform.position);
+			if (distance < minDistance) {
+				nearestExit = currExit.GetComponent<Transform> ();
+			}
 		}
-        return minDistance;
+		return nearestExit;
     }
 }
