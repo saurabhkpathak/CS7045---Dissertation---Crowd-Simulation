@@ -23,10 +23,15 @@ public class NavMeshAgentSample : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!evacuationState && Vector3.Distance(agent.transform.position, target.transform.position) < 1.5) {
+        if (evacuationState && Vector3.Distance(agent.transform.position, target.transform.position) < 1.5)
+        {
+            agent.speed = 0;
+        }
+
+        agent.SetDestination(target.position);
+        if (!evacuationState && Vector3.Distance(agent.transform.position, target.transform.position) < 1.5) {
 			int rDest = r.Next (1, 11);
 			target = GameObject.Find ("Destination " + rDest).GetComponent<Transform> ();
-			agent.SetDestination(target.position);
 		}
         if (Input.GetKeyDown("s")) {
             agent.speed = 0;
@@ -35,6 +40,7 @@ public class NavMeshAgentSample : MonoBehaviour {
             agent.speed = speedCache;
         }
         if (Input.GetKeyDown("e")) {
+            evacuationState = true;
             agent.speed = 0;
 			target = getNearestExit ();
 			agent.speed = speedCache;
@@ -60,6 +66,7 @@ public class NavMeshAgentSample : MonoBehaviour {
 			GameObject currExit = (GameObject)exits [i - 1];
 			float distance = Vector3.Distance (agent.transform.position, currExit.transform.position);
 			if (distance < minDistance) {
+                minDistance = distance;
 				nearestExit = currExit.GetComponent<Transform> ();
 			}
 		}
