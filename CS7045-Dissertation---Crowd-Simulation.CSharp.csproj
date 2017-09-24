@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ChildCounter.cs" />
     <Compile Include="Assets\Scripts\AIController.cs" />
     <Compile Include="Assets\Scripts\Destinations.cs" />
     <Compile Include="Assets\Scripts\Event.cs" />
